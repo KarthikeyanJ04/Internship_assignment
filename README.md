@@ -17,22 +17,22 @@ The application is containerized with Docker Compose and deployed to an AWS EC2 
 
 ### 1. CI/CD Configuration & Execution
 GitHub Actions workflow (`deploy.yml`) and successful execution logs.
-![CI/CD Config](screenshots/Screenshot 2025-11-28 015806.png)
-![CI/CD Success](screenshots/Screenshot 2025-11-28 015341.png)
+![CI/CD Config](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20015806.png?raw=true)
+![CI/CD Success](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20015341.png?raw=true)
 
 ### 2. Docker Build & Push
 Build logs from the pipeline and verified images on Docker Hub.
-![Build Logs](screenshots/Screenshot 2025-11-28 020211.jpg)
-![Docker Hub](screenshots/Screenshot 2025-11-28 020245.jpg)
+![Build Logs](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020211.png?raw=true)
+![Docker Hub](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020245.png?raw=true)
 
 ### 3. Application Deployment
 Live application running on AWS EC2. The data shown proves the database connection is active.
-![Working UI](screenshots/Screenshot 2025-11-28 020452.png)
+![Working UI](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020452.png?raw=true)
 
 ### 4. Nginx Setup & Infrastructure
 Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` output showing the gateway running on Port 80 routing to internal services.
-![Nginx Config](screenshots/Screenshot 2025-11-28 021016.png)
-![Infrastructure](screenshots/Screenshot 2025-11-28 021031.png)
+![Nginx Config](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20021016.png?raw=true)
+![Infrastructure](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20021031.png?raw=true)
 
 ---
 
@@ -46,8 +46,8 @@ Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` outp
 ### Local Setup
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/karthikeyanj04/YOUR-REPO-NAME.git](https://github.com/karthikeyanj04/YOUR-REPO-NAME.git)
-    cd YOUR-REPO-NAME
+    git clone [https://github.com/KarthikeyanJ04/Internship_assignment.git](https://github.com/KarthikeyanJ04/Internship_assignment.git)
+    cd Internship_assignment
     ```
 
 2.  Start the services:
@@ -70,7 +70,7 @@ The project uses `.github/workflows/deploy.yml` for automated deployment.
     * `SSH_KEY` (PEM file content)
 
 2.  **Trigger:**
-    Pushing to the `main` branch triggers the pipeline. It builds the images, pushes to Docker Hub, copies the configuration files to the server via SCP, and restarts the containers.
+    Pushing to the `master` branch triggers the pipeline. It builds the images, pushes to Docker Hub, copies the configuration files to the server via SCP, and restarts the containers.
 
 ### Manual Server Deployment (Optional)
 If deploying manually without the pipeline:
