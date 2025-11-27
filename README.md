@@ -2,7 +2,7 @@
 
 This repository contains a full-stack MEAN application (MongoDB, Express, Angular, Node.js) deployed using Docker and GitHub Actions.
 
-The application is containerized with Docker Compose and deployed to an AWS EC2 instance. It uses Nginx as a reverse proxy to route traffic on Port 80, eliminating CORS issues and serving as a single entry point.
+The application is containerized with Docker Compose and deployed to an AWS EC2 instance. It uses Nginx as a reverse proxy to route traffic on Port 80.
 
 ## Project Structure
 * **Frontend:** Angular 15 (Multi-stage Docker build served via Nginx Alpine)
