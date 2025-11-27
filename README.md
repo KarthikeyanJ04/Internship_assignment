@@ -16,25 +16,51 @@ The application is containerized with Docker Compose and deployed to an AWS EC2 
 ## Proof of Execution
 
 ### 1. CI/CD Configuration & Execution
-GitHub Actions workflow (`deploy.yml`) and successful execution logs.
+**Description:** GitHub Actions workflow (`deploy.yml`) configuration and the successful execution logs showing all steps passing.
+
 ![CI/CD Config](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20015806.png?raw=true)
+<br>
 ![CI/CD Success](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20023618.png?raw=true)
 
+<br>
+<br>
+
+---
+
 ### 2. Docker Build & Push
-Build logs from the pipeline and verified images on Docker Hub.
+**Description:** Build logs from the pipeline showing layer creation and verified images pushed to Docker Hub.
+
 ![Build Logs](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020211.png?raw=true)
+<br>
 ![Docker Hub](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020245.png?raw=true)
 
+<br>
+<br>
+
+---
+
 ### 3. Application Deployment
-Live application running on AWS EC2. The data shown proves the database connection is active (Picture taken on different browser cause Zen doesn't show url fully on screen at all times).
+**Description:** Live application running on AWS EC2. The data retrieved ("hellooooo") proves the database connection is active.
+*(Note: Second screenshot taken on a different browser to ensure the full URL/IP address is visible)*.
+
 ![Home Screen](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020340.png?raw=true)
+<br>
 ![Working UI](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020452.png?raw=true)
 
+<br>
+<br>
+
+---
 
 ### 4. Nginx Setup & Infrastructure
-Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` output showing the gateway running on Port 80 routing to internal services.
+**Description:** The Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` output confirming the gateway is running on Port 80 and routing to internal services.
+
 ![Nginx Config](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20021016.png?raw=true)
+<br>
 ![Infrastructure](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20021031.png?raw=true)
+
+<br>
+<br>
 
 ---
 
@@ -46,18 +72,18 @@ Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` outp
 * AWS EC2 (Ubuntu 22.04) for deployment
 
 ### Local Setup
-1.  Clone the repository:
+1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/KarthikeyanJ04/Internship_assignment.git](https://github.com/KarthikeyanJ04/Internship_assignment.git)
     cd Internship_assignment
     ```
 
-2.  Start the services:
+2.  **Start the services:**
     ```bash
     docker-compose up -d --build
     ```
 
-3.  Access the app:
+3.  **Access the app:**
     * Frontend: `http://localhost`
     * API: `http://localhost/api`
 
