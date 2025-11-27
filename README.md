@@ -26,8 +26,10 @@ Build logs from the pipeline and verified images on Docker Hub.
 ![Docker Hub](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020245.png?raw=true)
 
 ### 3. Application Deployment
-Live application running on AWS EC2. The data shown proves the database connection is active.
+Live application running on AWS EC2. The data shown proves the database connection is active (Picture taken on different browser cause Zen doesn't show url fully on screen at all times).
+![Home Screen](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020340.png?raw=true)
 ![Working UI](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020452.png?raw=true)
+
 
 ### 4. Nginx Setup & Infrastructure
 Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` output showing the gateway running on Port 80 routing to internal services.
