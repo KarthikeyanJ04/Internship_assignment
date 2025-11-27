@@ -1,23 +1,22 @@
-# Use Node for Angular dev server
-FROM node:18-alpine
-
-# Set working directory
+# Stage 1: Build
+FROM node:18-alpine as build
 WORKDIR /app
-
-# Copy package files first for caching
 COPY package*.json ./
-
-# Install Angular CLI globally
-RUN npm install -g @angular/cli
-
-# Install dependencies
 RUN npm install
-
-# Copy rest of the frontend code
 COPY . .
+RUN npm run build --prod
 
-# Expose Angular dev server port
-EXPOSE 8081
+# Stage 2: Serve
+FROM nginx:alpine
 
-# Default command to run Angular dev server
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "8081"]
+# DELETE the default Nginx config
+RUN rm /etc/nginx/conf.d/default.conf
+
+# COPY your new custom config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# COPY the Angular files (Use the path you found earlier)
+COPY --from=build /app/dist/angular-15-crud /usr/share/nginx/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

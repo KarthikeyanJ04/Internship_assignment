@@ -1,0 +1,65 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # 1. Login to Docker Hub
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    # 2. Build & Push Backend
+    - name: Build and Push Backend
+      uses: docker/build-push-action@v4
+      with:
+        context: ./backend
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/backend:latest
+
+    # 3. Build & Push Frontend
+    - name: Build and Push Frontend
+      uses: docker/build-push-action@v4
+      with:
+        context: ./frontend
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/frontend:latest
+
+    # 4. COPY CONFIG FILES TO SERVER (The "No Git" Way)
+    - name: Copy Config Files via SCP
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.HOST_IP }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        # We copy ONLY these specific files/folders
+        source: "docker-compose.yml,nginx/nginx.conf"
+        target: "~/mean-app"
+
+    # 5. EXECUTE REMOTE COMMANDS
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.HOST_IP }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd ~/mean-app
+          
+          # Pull the latest images we just pushed
+          sudo docker compose pull
+          
+          # Restart containers with new images
+          sudo docker compose up -d --remove-orphans
+          
+          # Clean up old/unused images to save space on the VM
+          sudo docker image prune -f
