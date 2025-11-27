@@ -18,7 +18,7 @@ The application is containerized with Docker Compose and deployed to an AWS EC2 
 ### 1. CI/CD Configuration & Execution
 GitHub Actions workflow (`deploy.yml`) and successful execution logs.
 ![CI/CD Config](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20015806.png?raw=true)
-![CI/CD Success](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20015341.png?raw=true)
+![CI/CD Success](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20023336.png?raw=true)
 
 ### 2. Docker Build & Push
 Build logs from the pipeline and verified images on Docker Hub.
