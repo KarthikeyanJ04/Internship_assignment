@@ -40,8 +40,7 @@ The application is containerized with Docker Compose and deployed to an AWS EC2 
 ---
 
 ### 3. Application Deployment
-**Description:** Live application running on AWS EC2. The data retrieved ("hellooooo") proves the database connection is active.
-*(Note: Second screenshot taken on a different browser to ensure the full URL/IP address is visible)*.
+**Description:** Live application running on AWS EC2. The data shown proves the database connection is active (Picture taken on different browser cause Zen doesn't show url fully on screen at all times).
 
 ![Home Screen](https://github.com/KarthikeyanJ04/Internship_assignment/blob/master/screenshots/Screenshot%202025-11-28%20020340.png?raw=true)
 <br>
