@@ -48,13 +48,13 @@ Nginx configuration (`nginx.conf`) showing the proxy logic, and `docker ps` outp
 ### Local Setup
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/KarthikeyanJ04/Internship_assignment.git](https://github.com/KarthikeyanJ04/Internship_assignment.git)
+    git clone https://github.com/KarthikeyanJ04/Internship_assignment.git
     cd Internship_assignment
     ```
 
 2.  Start the services:
     ```bash
-    docker-compose up -d --build
+    sudo docker-compose up -d
     ```
 
 3.  Access the app:
@@ -87,5 +87,5 @@ If deploying manually without the pipeline:
 
 3.  Run the application:
     ```bash
-    docker compose up -d
+    sudo docker compose up -d
     ```
